@@ -12,6 +12,13 @@ public class Main {
 //        HelloWorld helloWorld =new HelloWorld("colin");
         ApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
         HelloWorld helloWorld = (HelloWorld) ctx.getBean("HelloWorld");
+        HelloWorld helloWorld1 = (HelloWorld) ctx.getBean("He");
         helloWorld.hello();
+        Car car = (Car) ctx.getBean("car");
+        System.out.println(car);
+        Car car1 = (Car) ctx.getBean("car1");
+        System.out.println(car1);
+        Person person = (Person) ctx.getBean("person");
+        System.out.println(person);
     }
 }

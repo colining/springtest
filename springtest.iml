@@ -16,6 +16,14 @@
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <dependency>web application context</dependency>
           <file>file://$MODULE_DIR$/src/test.xml</file>
+          <file>file://$MODULE_DIR$/src/auto.xml</file>
+          <file>file://$MODULE_DIR$/src/relation.xml</file>
+          <file>file://$MODULE_DIR$/src/scope.xml</file>
+          <file>file://$MODULE_DIR$/src/properties.xml</file>
+          <file>file://$MODULE_DIR$/src/spel.xml</file>
+          <file>file://$MODULE_DIR$/src/circle.xml</file>
+          <file>file://$MODULE_DIR$/src/factory.xml</file>
+          <file>file://$MODULE_DIR$/src/annotation.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -29,5 +37,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Spring-4.3.8.RELEASE" level="project" />
     <orderEntry type="library" name="Spring MVC-4.3.8.RELEASE" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

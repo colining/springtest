@@ -1,9 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-        <bean id="HelloWorld" class="bean.HelloWorld">
-            <constructor-arg value="lallalal"/>
-            <property name="name" value="colin"></property>
-        </bean>
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <bean id="HelloWorld" class="bean.HelloWorld">
+        <constructor-arg value="lallalal"/>
+        <property name="name" value="colin"></property>
+    </bean>
+    <bean id="He" class="bean.HelloWorld">
+        <constructor-arg value="ooooo"/>
+    </bean>
+
+    <bean id="car" class="bean.Car">
+        <constructor-arg index="0" value=""/>
+        <constructor-arg index="1" value=""/>
+        <constructor-arg index="2" value="3"/>
+    </bean>
+    <bean id="car1" class="bean.Car">
+        <constructor-arg index="0" type="java.lang.String" value=""/>
+        <constructor-arg index="1" type="java.lang.String">
+            <value><![CDATA[<SHANGHAI>]]></value>
+        </constructor-arg>
+        <constructor-arg index="2" type="double"
+                         value="5"/>
+    </bean>
+    <bean id="person" class="bean.Person">
+        <property name="name" value="tom"></property>
+        <property name="age" value="24"></property>
+        <property name="car">
+            <bean class="bean.Car">
+                <constructor-arg index="0" type="java.lang.String" value=""/>
+                <constructor-arg index="1" type="java.lang.String" value=""/>
+                <constructor-arg index="2" type="double" value="250"/>
+            </bean>
+        </property>
+        <property name="car.maxSpeed" value="260"></property>
+    </bean>
+    <bean id="person2" class="bean.Person">
+        <constructor-arg index="0" value="je"/>
+        <constructor-arg index="1" value="5"/>
+        <constructor-arg index="2" ref="car"/>
+        <property name="car.price" value="5000"></property>
+    </bean>
+
+    <bean id="person3" class="collection.Person">
+        <property name="name" value="mike"></property>
+        <property name="age" value="25"></property>
+        <property name="cars">
+            <list>
+                <ref bean="car"></ref>
+                <ref bean="car1"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <util:list id="cars">
+        <ref bean="car1"/>
+        <ref bean="car"/>
+    </util:list>
+
+    <bean id="person4" class="collection.Person">
+        <property name="name" value="jack"></property>
+        <property name="age" value="25"></property>
+        <property name="cars" ref="cars"></property>
+    </bean>
+
+    <bean id="person5" class="collection.Person" p:age = "30" p:name="colin" p:cars-ref="car"></bean>
 </beans>
