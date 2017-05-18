@@ -15,13 +15,13 @@ public class Main {
 //        TestObject to = (TestObject) ctx.getBean("testObject");
 //        System.out.println(to);
 //
-//        UserController userController = (UserController) ctx.getBean("userController");
-//        System.out.println(userController);
+        UserController userController = (UserController) ctx.getBean("userController");
+        userController.execute();
+        System.out.println(userController);
 //
 //        UserService userService = (UserService) ctx.getBean("userService");
 //        System.out.println(userService);
-
-        UserRepositoryImpl userRepository = (UserRepositoryImpl) ctx.getBean("userRepository");
-        System.out.println(userRepository);
+//        UserRepositoryImpl userRepository = (UserRepositoryImpl) ctx.getBean("userRepository");
+//        System.out.println(userRepository);
     }
 }
